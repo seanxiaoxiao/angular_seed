@@ -1,0 +1,26 @@
+<div ng-controller="HomeController">
+    <p>The quick brown fox jumps over the lazy dog. </p>
+    <p>Forums: </p>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(id, forum) in forums">
+                <td><a href="#/forums/{{id}}" >{{forum.name}}</a></td>
+                <td><a href="" ng-click="deleteForum($id)">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <form ng-submit="createForum()">
+        <input id='nameInput' type='text' placeholder='Name' ng-model="name"/>
+        <input type="submit" id="submit" value="Create"/>
+    </form>
+</div>
