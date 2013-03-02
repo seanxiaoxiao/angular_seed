@@ -1,15 +1,16 @@
 <!doctype html>
-<html lang="en" ng-app="banterApp">
+<html lang="en" ng-app="banterApp" >
 <head>
   <meta charset="utf-8">
   <title>My AngularJS App</title>
   <link rel="stylesheet" href="css/app.css"/>
   <link rel="stylesheet" href="css/foundation.css"/>
 </head>
-<body>
+<body ng-controller="AuthController">
 
   <div class="row">
     <div class="twelve columns">
+        <a href="#" ng-click="logOut()">Log Out</a>
         <h2>Welcome to Foundation</h2>
         <p>This is version <strong>3.2.5</strong> generated on January 26, 2013.</p>
         <hr>
@@ -26,11 +27,14 @@
   <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
   <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-auth-client.js'></script>
   <script type="text/javascript" src='http://underscorejs.org/underscore.js'></script>
-  <script src="lib/angular/angular.js"></script>
   <script src="lib/foundation/foundation.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-cookies.js"></script>
+
   <script src='js/data.js'></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
+  <script src="js/controllers/base_controller.js"></script>
   <script src="js/controllers/home_controller.js"></script>
   <script src="js/controllers/forum_controller.js"></script>
   <script src="js/filters.js"></script>

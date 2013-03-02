@@ -6,29 +6,8 @@
  * To change this template use File | Settings | File Templates.
  */
 
-var authClient = new FirebaseAuthClient(Banter.forums, function(error, user) {
-    if (error) {
-        // an error occurred while attempting login
-        console.log(error);
-    } else if (user) {
-        // user authenticated with Firebase
-        console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
-    } else {
-        // user is logged out
-    }
-});
-
-authClient.login('facebook', {
-    rememberMe: true,
-    scope: 'email,user_likes'
-});
 
 function HomeController($scope, $timeout) {
-
-    authClient.login('facebook', {
-        rememberMe: true,
-        scope: 'email,user_likes'
-    });
 
     Banter.forums.on('value', function(snapshot) {
         $timeout(function() {
